@@ -208,8 +208,8 @@ router.post("/create/:userid", verifyToken, async (req, res) => {
 
 //Getting receipe complete info based on the click
 
-router.get("/receipe/:id", verifyToken, async (req, res) => {
-  let { id } = req.params;
+router.get("/receipe/:id", async (req, res) => {
+  console.log(id)
   try {
     const response = await ReceipeModal.findOne({ _id: id });
     return res.json({ response });
