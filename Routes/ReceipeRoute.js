@@ -209,7 +209,8 @@ router.post("/create/:userid", verifyToken, async (req, res) => {
 //Getting receipe complete info based on the click
 
 router.get("/receipe/:id", async (req, res) => {
-  console.log(id)
+  const id=req.params.id;
+  
   try {
     const response = await ReceipeModal.findOne({ _id: id });
     return res.json({ response });
